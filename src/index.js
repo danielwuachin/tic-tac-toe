@@ -51,18 +51,47 @@ class Game extends React.Component {
       }],
       stepNumber: 0,
       xIsNext: true,
+      column: 0,
+      row: 0,
     };
   }
 
+
+  position(i){
+    let row = null,
+      column = null;
+      /* rows */
+      if(i == 0 || i == 1 || i == 2){
+      row = 1;
+    }else if (i == 3 || i == 4 || i == 5) {
+      row = 2;
+    }else if (i == 6 || i == 7 || i == 8) {
+      row = 3
+    }
+    
+    /* columns */
+    if(i == 0 || i == 3 || i == 6){
+      column = 1;
+    }else if (i == 1 || i == 4 || i == 7) {
+      column = 2;
+    }else if (i == 2 || i == 5 || i == 8) {
+      column = 3      
+    }
+    
+    const arr = [row, column];
+    return arr;
+  }
 
   
   handleClick(i) {
     const history = this.state.history.slice(0, this.state.stepNumber + 1);
     const current = history[history.length - 1];
     const squares = current.squares.slice();
+    const position = this.position(i);
     if (calculateWinner(squares) || squares[i]) {
       return;
     }
+
     squares[i] = this.state.xIsNext ? 'X' : 'O';
     this.setState({
       history: history.concat([{
@@ -70,6 +99,8 @@ class Game extends React.Component {
       }]),
       stepNumber: history.length,
       xIsNext: !this.state.xIsNext,
+      row: position[0],
+      column: position[1],
     });
   }
 
@@ -85,9 +116,11 @@ class Game extends React.Component {
     const history = this.state.history,
       current = history[this.state.stepNumber],
       winner = calculateWinner(current.squares),
+      row = this.state.row,
+      column = this.state.column,
       moves = history.map((step,move) => {
         const desc = move 
-        ? 'Go to move #' + move
+        ? `Go to move # ${move} (row: ${row} - column: ${column})`
         : 'Go to game start';
         return (
           <li key={move}>
