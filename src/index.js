@@ -19,6 +19,18 @@ class Board extends React.Component {
     );
   }
 
+
+  /* let count = 0,
+        html = ''
+        for(let i = 0; i < 3; i++){
+          html += '<div className="board-row">'
+            for(let j = 0; j <= 3; j++){
+              html += this.renderSquare(count);
+              count ++;
+            }
+          html +='</div>'
+        } */
+  
   render() {
     return (
       <div>
@@ -41,6 +53,8 @@ class Board extends React.Component {
     );
   }
 }
+
+
 
 class Game extends React.Component {
   constructor(props) {
