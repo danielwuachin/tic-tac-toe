@@ -165,6 +165,8 @@ class Game extends React.Component {
     if (winner) {
       console.log(winner);
       status = "Winner: " + winner[0];
+    } else if (stepNumber === 9) {
+      status = "Tie :( refresh and try again!";
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
