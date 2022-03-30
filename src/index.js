@@ -3,9 +3,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 
 function Square(props) {
+  let line = props.winner;
+
   return (
     /* arrow function to avoid problems with "this" */
-    <button className="square" onClick={props.onClick}>
+    <button
+      className={`square ${line.includes(props.id) ? "winner" : ""}`}
+      id={props.id}
+      onClick={props.onClick}
+    >
       {props.value}
     </button>
   );
@@ -15,7 +21,11 @@ class Board extends React.Component {
   renderSquare(i) {
     return (
       <Square
+        // to know if the square is winner
+        winner={this.props.winner}
         value={this.props.squares[i]}
+        // to add id to squares
+        id={i}
         onClick={() => this.props.onClick(i)}
       />
     );
@@ -153,7 +163,8 @@ class Game extends React.Component {
     let status;
 
     if (winner) {
-      status = "Winner: " + winner;
+      console.log(winner);
+      status = "Winner: " + winner[0];
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
@@ -163,6 +174,8 @@ class Game extends React.Component {
         <div className="game-board">
           <Board
             squares={current.squares}
+            // if not winner, send empty array to avoid errors
+            winner={winner ? winner[1] : []}
             onClick={(i) => this.handleClick(i)}
           />
         </div>
@@ -197,7 +210,8 @@ function calculateWinner(squares) {
   for (let i = 0; i < lines.length; i++) {
     const [a, b, c] = lines[i];
     if (squares[a] && squares[a] === squares[b] && squares[a] === squares[c]) {
-      return squares[a];
+      /* changed to array to make work the highlights of winners squares */
+      return [squares[a], lines[i]];
     }
   }
   return null;
