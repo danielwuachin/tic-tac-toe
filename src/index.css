@@ -1,59 +1,119 @@
-body {
-    font: 14px "Century Gothic", Futura, sans-serif;
-    margin: 20px;
-}
-
-ol,
-ul {
-    padding-left: 30px;
-}
-
-.board-row:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
-.status {
-    margin-bottom: 10px;
-}
-
-.square {
-    background: #fff;
-    border: 1px solid #999;
-    float: left;
-    font-size: 24px;
-    font-weight: bold;
-    line-height: 34px;
-    height: 34px;
-    margin-right: -1px;
-    margin-top: -1px;
-    padding: 0;
-    text-align: center;
-    width: 34px;
-}
-
-.square:focus {
-    outline: none;
-}
-
-.kbd-navigation .square:focus {
-    background: #ddd;
-}
-
-.game {
-    display: flex;
-    flex-direction: row;
-}
-
-.game-info {
-    margin-left: 20px;
-}
-
-.active {
-    font-weight: 900;
-}
-
-.winner {
-    background-color: red;
-}
+        body {
+            margin: 0;
+            font: 16px "Century Gothic", Futura, sans-serif;
+            color: deepskyblue;
+            /*     background-image: url('../public/giphy.gif');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    min-height: 100vh; */
+        }
+        
+        .background {
+            background-color: black;
+            background-image: url('../public/giphy.gif');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            min-height: 100vh;
+            min-width: 100vw;
+            z-index: -2;
+            position: fixed;
+        }
+        
+        button {
+            cursor: pointer;
+            border: none;
+            border-radius: 10px;
+            padding: 2vh;
+            background-color: darkslategrey;
+            color: deepskyblue;
+        }
+        
+        .active {
+            font-weight: 900;
+        }
+        
+        .board-row:after {
+            clear: both;
+            content: "";
+            display: table;
+        }
+        
+        .game {
+            display: grid;
+            grid-template-areas: 'a' 'a' 'a';
+            grid-template-rows: 5vh 80vh 1fr;
+            min-height: 100vh;
+            background-color: rgb(0 0 0 / 50%);
+            justify-items: center;
+        }
+        
+        .game-board {
+            align-self: center;
+            max-height: 60vh;
+        }
+        
+        .game-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .title {
+            font-size: 2rem;
+            text-decoration: underline;
+            width: -moz-fit-content;
+            width: fit-content;
+        }
+        
+        .square {
+            background-color: rgb(47, 79, 79);
+            border: 1px solid #999;
+            float: left;
+            font-size: 2rem;
+            font-weight: bold;
+            height: 20vw;
+            max-height: 20vh;
+            width: 20vw;
+            max-width: 20vh;
+            margin-right: -1px;
+            margin-top: -1px;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .square:focus {
+            outline: none;
+        }
+        
+        li {
+            margin-top: 0.5rem;
+        }
+        
+        li>button {
+            color: rgb(17, 17, 17);
+        }
+        
+        ol,
+        ul {
+            list-style: none;
+            margin: 0.7rem 0 0 -2.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        ol:first-child {
+            margin-bottom: 0.3rem;
+        }
+        
+        .winner {
+            background-color: red;
+        }
+        
+        @media screen and (min-width:964px) {
+            .game {
+                grid-template-areas: 'a ' 'b c';
+            }
+        }

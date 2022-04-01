@@ -165,35 +165,41 @@ class Game extends React.Component {
     if (winner) {
       console.log(winner);
       status = "Winner: " + winner[0];
-    } else if (stepNumber === 9) {
+    }
+
+    // to say if a Tie happens
+    else if (stepNumber === 9) {
       status = "Tie :( refresh and try again!";
     } else {
       status = "Next player: " + (this.state.xIsNext ? "X" : "O");
     }
 
     return (
-      <div className="game">
-        <div className="game-board">
-          <Board
-            squares={current.squares}
-            // if not winner, send empty array to avoid errors
-            winner={winner ? winner[1] : []}
-            onClick={(i) => this.handleClick(i)}
-          />
+      <>
+        <div className="background"></div>
+        <div className="game">
+          <div className="title">{status}</div>
+          <div className="game-board">
+            <Board
+              squares={current.squares}
+              // if not winner, send empty array to avoid errors
+              winner={winner ? winner[1] : []}
+              onClick={(i) => this.handleClick(i)}
+            />
+          </div>
+          <div className="game-info">
+            <button onClick={() => this.changeOrder()}>
+              Change order to {order ? "DESC" : "ASC"}
+            </button>
+            <ol>
+              {
+                //to change order
+                order ? moves.reverse() : moves
+              }
+            </ol>
+          </div>
         </div>
-        <div className="game-info">
-          <div>{status}</div>
-          <button onClick={() => this.changeOrder()}>
-            Change order to {order ? "DESC" : "ASC"}
-          </button>
-          <ol>
-            {
-              //to change order
-              order ? moves.reverse() : moves
-            }
-          </ol>
-        </div>
-      </div>
+      </>
     );
   }
 }
