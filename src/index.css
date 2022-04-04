@@ -42,8 +42,9 @@
         
         .game {
             display: grid;
-            grid-template-areas: 'a' 'a' 'a';
-            grid-template-rows: 5vh 80vh 1fr;
+            grid-template-areas: 'a' 'b' 'c';
+            grid-template-rows: 10vh 54vh 25vh;
+            grid-template-columns: 100vw;
             min-height: 100vh;
             background-color: rgb(0 0 0 / 50%);
             justify-items: center;
@@ -52,19 +53,21 @@
         .game-board {
             align-self: center;
             max-height: 60vh;
+            grid-area: b;
         }
         
         .game-info {
+            grid-area: c;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         
         .title {
+            grid-area: a;
+            margin-top: 1.3rem;
             font-size: 2rem;
             text-decoration: underline;
-            width: -moz-fit-content;
-            width: fit-content;
         }
         
         .square {
@@ -74,9 +77,9 @@
             font-size: 2rem;
             font-weight: bold;
             height: 20vw;
-            max-height: 20vh;
+            max-height: 18vh;
             width: 20vw;
-            max-width: 20vh;
+            max-width: 18vh;
             margin-right: -1px;
             margin-top: -1px;
             padding: 0;
@@ -112,8 +115,29 @@
             background-color: red;
         }
         
-        @media screen and (min-width:964px) {
+        @media screen and (min-width:450px) and (max-width:768px) {
+            .game-info {
+                margin-top: 7vw;
+            }
             .game {
-                grid-template-areas: 'a ' 'b c';
+                grid-template-rows: 15vh 54vh 25vh;
+            }
+            .square {
+                font-size: 2.2rem;
+            }
+        }
+        
+        @media screen and (min-width:769px) {
+            .game {
+                grid-template-areas: 'a a' 'b c';
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 10vh 1fr;
+                align-items: center;
+            }
+            .title {
+                font-size: 3rem;
+            }
+            .square {
+                font-size: 2.5rem;
             }
         }

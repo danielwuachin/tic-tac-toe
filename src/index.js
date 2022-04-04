@@ -69,7 +69,7 @@ class Game extends React.Component {
       xIsNext: true,
       column: 0,
       row: 0,
-      switch: false,
+      switch: true,
     };
   }
 
