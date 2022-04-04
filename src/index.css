@@ -63,6 +63,14 @@
             align-items: center;
         }
         
+        .game-info>button {
+            transition: all 300ms ease-in-out;
+        }
+        
+        .game-info>button:hover {
+            transform: scale(1.2);
+        }
+        
         .title {
             grid-area: a;
             margin-top: 1.3rem;
@@ -71,7 +79,7 @@
         }
         
         .square {
-            background-color: rgb(47, 79, 79);
+            background-color: rgb(17, 17, 17);
             border: 1px solid #999;
             float: left;
             font-size: 2rem;
@@ -84,18 +92,29 @@
             margin-top: -1px;
             padding: 0;
             text-align: center;
+            transition: all 300ms;
         }
         
         .square:focus {
             outline: none;
         }
         
+        .square:hover {
+            background-color: rgb(41, 41, 41);
+        }
+        
         li {
             margin-top: 0.5rem;
         }
         
+        li>button:hover {
+            transform: scale(1.2);
+        }
+        
         li>button {
-            color: rgb(17, 17, 17);
+            background-color: rgb(17, 17, 17);
+            color: deepskyblue;
+            transition: all 300ms;
         }
         
         ol,
