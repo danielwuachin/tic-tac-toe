@@ -2,6 +2,8 @@
 
 This project is a classic Tic Tac Toe game implemented in React with a visually appealing user interface. It also includes the feature to go back and review your moves throughout the game! ⏪
 
+![Gif example](https://user-images.githubusercontent.com/68133961/248436102-7561634a-bd59-4947-9b49-1c33150ad451.gif)
+
 ## Technical Specifications 🛠️
 
 - Only React.js is used! ⚛️
