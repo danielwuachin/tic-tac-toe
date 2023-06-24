@@ -1,41 +1,41 @@
 # Tic Tac Toe Game 🎮
 
-Este proyecto es el clásico juego de Tic Tac Toe implementado en React, con una interfaz de usuario atractiva. Además, ¡puedes retroceder para ver tus movimientos a lo largo del juego! ⏪
+This project is a classic Tic Tac Toe game implemented in React with a visually appealing user interface. It also includes the feature to go back and review your moves throughout the game! ⏪
 
-## Especificaciones Técnicas 🛠️
+## Technical Specifications 🛠️
 
-- ¡Solo se utiliza React.js! ⚛️
-- Temas abordados:
+- Only React.js is used! ⚛️
+- Topics covered:
   - Hooks
-  - Inmutabilidad
-  - Diseño adaptable
+  - Immutability
+  - Responsive design
 
-## Características 🔍
+## Features 🔍
 
-- Juega al clásico juego de Tic Tac Toe con una interfaz moderna.
-- Disfruta de una interfaz fácil de usar y visualmente atractiva.
-- Retrocede y revisa tus movimientos en el historial del juego.
+- Play the traditional Tic Tac Toe game with a modern twist.
+- Enjoy a user-friendly and visually appealing interface.
+- Review and analyze your moves by going back and forth in the game history.
 
-## Tecnologías Utilizadas 🖥️
+## Technologies Used 🖥️
 
 - React.js
 - JavaScript
 - HTML
 - CSS
 
-## Cómo Ejecutar el Proyecto ▶️
+## How to Run ▶️
 
-1. Clona este repositorio.
-2. Navega hasta el directorio del proyecto.
-3. Instala las dependencias ejecutando `npm install`.
-4. Inicia el servidor de desarrollo con `npm start`.
-5. Abre tu navegador web y visita `http://localhost:3000` para jugar al juego.
+1. Clone this repository.
+2. Navigate to the project directory.
+3. Install the dependencies by running `npm install`.
+4. Start the development server with `npm start`.
+5. Open your web browser and visit `http://localhost:3000` to play the game.
 
-## Enlace al Proyecto en Internet 🌐
+## Link to the Project Online 🌐
 
-¡Puedes jugar al Tic Tac Toe en línea haciendo clic [aquí](https://danielwuachin.github.io/tic-tac-toe/)! 🌟
+You can play the Tic Tac Toe game online by clicking [here](https://danielwuachin.github.io/tic-tac-toe/)! 🌟
 
-## Conclusión 💡
+## Conclusion 💡
 
-Este proyecto del juego Tic Tac Toe demuestra el uso de React.js y demuestra habilidades en conceptos fundamentales como los React Hooks, la inmutabilidad y el diseño adaptable. ¡Disfruta jugando este juego atemporal con un toque moderno!
+This Tic Tac Toe game project showcases the usage of React.js and demonstrates proficiency in fundamental concepts such as React Hooks, immutability, and responsive design. Enjoy playing this timeless game with a modern touch!
 
